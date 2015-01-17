@@ -1,0 +1,10 @@
+# Clyde Fox Theme Ignores
+#
+# We ignore three types of files:
+#   - Dependencies (dev and prod)
+#   - Builds
+#   - Environment settings and private data
+.nvmrc
+dist/
+src/bower_components/
+node_modules/

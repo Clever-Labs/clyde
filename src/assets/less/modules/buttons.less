@@ -1,0 +1,129 @@
+/**
+ * Main Stylesheet
+ *
+ * Do not code any styles within this file.
+ *
+ * USAGE:
+ * Import all styles into this file. Start with
+ * baseline styles at the top, site styles in the
+ * middle, then mobile styles at the end.
+ */
+
+// A plain text button
+.text-button {
+  font-family: @serif;
+  .font-size(1.4);
+  font-weight: 700;
+  font-style: italic;
+  display: inline-block;
+  margin-top: 0.5rem;
+
+  &:visited { color: @link-color; }
+  &:hover   { border-bottom: 2px solid @hlink-color; }
+}
+
+// Standard button
+.btn {
+  font-family: @sans-serif;
+  .font-size(1);
+  font-weight: 400;
+  text-align: center;
+  color: @white;
+  background: @link-color;
+  padding: 0.5rem 1rem;
+  .box-sizing(border-box);
+  border: 1px solid darken(@link-color, 10%);
+
+  &:visited { color: @white; }
+  &:hover   { background: darken(@link-color, 10%); }
+}
+
+// Small buttons
+.btn-sm {
+  &:extend(.btn);
+  padding: 0.1rem 0.75rem;
+}
+
+.btn-sm-round {
+  &:extend(.btn-sm);
+  .border-radius(2px);
+}
+
+.btn-secondary {
+  color: @white;
+  background: none;
+  border: 1px solid @white;
+
+  &:visited { color: @white; }
+
+  &:hover {
+    background: @white;
+  }
+}
+
+main .btn-secondary, main .btn-secondary:visited {
+  color: @link-color;
+  background: none;
+  border: 1px solid @link-color;
+  padding: 1em;
+
+  &:hover {
+    border: 1px solid @white;
+    color: @white;
+    background: @link-color;
+  }
+}
+
+// Large Buttons
+.btn-lg {
+  &:extend(.btn);
+  .font(@sans-serif, 1.7rem, 300, italic);
+  padding: 1.5rem 3rem;
+  display: table;
+  margin: auto;
+}
+
+.btn-lg-round {
+  &:extend(.btn-lg);
+  .border-radius(6px);
+
+  &.btn-cta {
+    color: @white;
+    background: @orange;
+    border: 1px solid darken(@orange, 10%);
+
+    &:visited { color: @white; }
+
+    &:hover {
+      background: darken(@orange, 5%);
+    }
+  }
+}
+
+// Button extensions
+
+.btn-inline {
+  display: inline-block;
+  .box-sizing(border-box);
+  margin: 0 0.5rem;
+
+  &.left { float: left; }
+}
+
+.btn-center {
+  display: block;
+  margin: 1em auto;
+}
+
+// Form buttons
+button {
+  &:extend(.btn);
+  padding: 0.5em 2em;
+  margin-top: 1em;
+
+  &:hover {
+    background: none;
+    border: 1px solid @orange;
+    color: @orange;
+  }
+}

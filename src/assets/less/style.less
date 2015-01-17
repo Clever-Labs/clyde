@@ -1,0 +1,136 @@
+/**
+ * Main Stylesheet
+ *
+ * Do not code any styles within this file.
+ *
+ * USAGE:
+ * Import all styles into this file. Start with
+ * baseline styles at the top, site styles in the
+ * middle, then mobile styles at the end.
+ */
+
+@fa-path: '../vendor/font-awesome/less';
+
+::selection { background: @orange; color: @white; }
+::moz-selection { background: @orange; color: @white; }
+
+// Baseline styles
+// ===============
+// Normalize.css is pulled in via
+// usemin using a copy from Bower
+@import 'modules/colors';     // Global color scheme
+@import 'modules/mixins';     // Mixins
+@import 'modules/grid';       // Baseline grid
+@import 'modules/type';       // Typography
+@import '@{fa-path}/font-awesome.less';
+@import 'modules/forms';      // Form styles
+@import 'modules/tables';     // Tables
+
+// Modules
+// =======
+// On-page elements used anywhere.
+@import 'modules/buttons';    // Buttons
+@import 'modules/images';     // Images
+@import 'modules/menus';      // Menus
+
+// Site styles
+// ===========
+// Import site modules and page-specific
+// overrides here.
+@import 'partials/header';    // Global header
+@import 'partials/footer';    // Global footer
+
+/*:::: Background images ::::*/
+
+// Adds a background image above an element using a pseudo-class
+//
+// :before  - Creates the pseudo-element to hold the background
+//
+// No styleguide reference.
+.bg-before {
+  &:before {
+    display: block;
+    width: 100%;
+    min-height: 283px;
+    background-size: cover;
+    content: ' '; // Use a space because not all browsers are cool with empty strings
+    margin: 0 auto 2.5em auto;
+  }
+}
+
+// Specific backgrounds for homepage buckets
+.img-sites { background: url('../img/websites-header.png') no-repeat center center; }
+.img-apps  { background: url('../img/apps-header.png') no-repeat center center; }
+.img-seo   { background: url('../img/seo-header.png') no-repeat center center; }
+
+// The final estimate price on the cost calculator
+.estimate {
+  .font-size(3);
+  font-family: @serif;
+  text-align: center;
+  color: @black;
+}
+
+//:::: JavaScript hooks :::://
+//
+// Success/error boxes
+//
+// Shown when a JavaScript event is fired.
+.event {
+  .box-sizing(border-box);
+  display: block;
+  width: 100%;
+  border: 1px solid @ltgray;
+  .border-radius(2px);
+  margin-top: 1em;
+  padding: 0.5em 1em;
+
+  // .success - Shows the user an event was successful
+  //
+  // Shown when any event succeeds. Is generally green and
+  // positive looking.
+  &.success {
+    background: lighten(@green, 10%);
+    border: 1px solid darken(@green, 10%);
+
+    p {
+      color: darken(@green, 20%);
+    }
+  }
+
+  // .error - An error/alert
+  //
+  // Shown when something goes wrong, something responds
+  // with an error.
+  &.error {
+    background: lighten(@red, 10%);
+    border: 1px solid darken(@red, 10%);
+
+    p, ul li {
+      color: darken(@red, 20%);
+    }
+  }
+}
+
+// Helpers
+.hidden, .spin-visibility { display: none; }
+
+/**
+ * Advertising callouts
+ */
+.callout {
+  display: block;
+  margin: 1.5em 0;
+  background: @cream;
+  .border-radius(2px);
+  .box-sizing(border-box);
+  padding: 2em;
+  border: 1px solid darken(@cream, 10%);
+}
+
+// Mobile styles
+// =============
+// Media queries and mobile overrides
+// go here.
+@import 'mobile';     // Mobile styles
+@import 'print';      // Print styles

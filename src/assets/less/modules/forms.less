@@ -1,0 +1,64 @@
+/**
+ * Form classes
+ *
+ * Default form styling
+ */
+
+form {
+  display: block;
+  margin: 1em;
+
+  .block {
+    width: 100%;
+  }
+}
+
+.cost-estimator { // Cost estimation form
+  div {
+    margin: 1em;
+    width: 100%;
+    float: left;
+  }
+}
+
+.inline {
+  display: inline-block;
+  width: 100%;
+}
+
+input {
+  padding: 0.5em;
+  border: 1px solid @ltgray;
+  .border-radius(2px);
+  width: 95%;
+  .box-sizing(border-box);
+  .font-size(1);
+  font-family: @sans-serif;
+
+  &[type="checkbox"] {
+    width: auto;
+  }
+
+  &.left { float: left; }
+  &.w7 { width: 75%; }
+}
+
+textarea {
+  &:extend(input);
+  display: inline-block;
+  width: 95%;
+}
+
+label {
+  display: block;
+  float: left;
+  clear: both;
+  margin: 0.5em 0;
+  color: @black;
+  .font-size(0.9);
+  font-weight: 400;
+}
+
+legend { &:extend(p); }
+
+// Form buttons bundled into `buttons.less` module

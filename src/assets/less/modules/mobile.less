@@ -1,0 +1,132 @@
+/*:::: Smaller screens ::::*/
+
+// Needed to hide mobile-only elements
+.mobile-show { display: none; }
+
+@media only screen and (max-width: 1023px) {
+
+  // body {
+  //   font-size: 0.8em;
+  //   line-height: 1.5em;
+  // }
+
+}
+
+
+/*:::: Mobile ::::*/
+
+@media handheld, only screen and (max-device-width: 450px) {
+  .mobile-show { display: inline-block; }
+  .float-vertical { position: relative; }
+
+  // Grid styling
+  body, .container, .row, .row-loose {
+    font-size: 1.1rem;
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .row, .row-loose {
+    .create-columns(@i) when (@i > 0) {
+      @column-width: (((@max-width * @i) / @total-columns) * 100) / @max-width;
+      @missing-width: (@gutter * ((@total-columns / @i) - 1)) / (@total-columns / @i);
+      @width: @column-width - @missing-width;
+
+      .col-@{i} {
+        width: auto;
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        .clearfix;
+      }
+
+      // Push and pull classes
+      .push-@{i} {
+        left: 0;
+      }
+
+      .pull-@{i} {
+        right: 0;
+      }
+
+      .create-columns(@i - 1);
+    }
+    .create-columns(@total-columns);
+  }
+
+  .pre-header {
+    text-align: left;
+
+    a {
+      float: left;
+    }
+  }
+
+  // Page header styles
+  header {
+    h1 {
+      img {
+        display: block;
+        width: 166px;
+        margin: 0.3em auto;
+      }
+    }
+
+    nav {
+      ul {
+        display: none;
+        float: left;
+        padding: 0;
+
+        li {
+          display: inline-block;
+          text-align: center;
+          .box-sizing(border-box);
+          width: 100%;
+          padding: 1em;
+        }
+      }
+
+      .nav-button {
+        padding: 0.5em 2em;
+        margin: auto;
+        display: block;
+        text-align: center;
+        font-weight: 700;
+      }
+    }
+  }
+
+  // Hero banner styling
+  .hero {
+    .heading {
+      .font-size(2);
+      margin-top: 0;
+    }
+
+    .service-picker { display: none; }
+  }
+
+  .post-hero {
+    p { .font-size(1.2); }
+  }
+
+  // Hide unnecessary homepage images (service buckets)
+  .bg-before { display: none; }
+
+  .pre-footer {
+    ul { display: none; }
+  }
+
+  footer {
+    ul.social-links {
+      float: left;
+    }
+  }
+}

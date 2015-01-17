@@ -1,0 +1,113 @@
+/**
+ * Footer styling
+ *
+ * Global page footer styling.
+ * Take care to reuse these styles
+ * by using the :extend LESS pseudo-class.
+ */
+
+// Pre-footer area
+
+.pre-footer {
+  background: @ltgray;
+
+  p {
+    .font-size(1.5);
+    font-weight: 300;
+    text-align: center;
+  }
+
+  ul {
+    width: 100%;
+    list-style: none;
+    margin: 2rem 0 0 0;
+    padding: 0;
+
+    li {
+      display: inline;
+      margin-right: 4.5rem;
+
+      &:last-child { margin-right: 0; }
+    }
+  }
+}
+
+// Site-wide footer
+footer {
+  background: @black;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: @sans-serif;
+    font-weight: 400;
+    color: @white;
+  }
+
+  p, li { color: @white; .font-size(0.8); }
+
+  a, a:visited {
+    color: #fff;
+
+    &:hover { color: @hlink-color; }
+  }
+
+  .text-link, .text-link:visited {
+    display: inline-block;
+    margin-top: 0.5rem;
+    .font-size(1em);
+    font-style: italic;
+    border-bottom: 1px dotted @white;
+
+    &:hover { border-bottom: @hlink-color; }
+  }
+
+  // First 3 cols with logos preprended
+  .bg-logo {
+    display: block;
+    float: left;
+    content: ' ';
+    margin-right: 7%;
+    min-width: 80px;
+    min-height: 83px;
+    background-size: cover;
+
+    &.clyde { background: url('../img/branding/clyde-bw.png') no-repeat center center; }
+    //&.spacekits {}
+    //&.pressit {}
+  }
+
+  .alt-service {
+    width: 70%;
+    float: left;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 0.6rem;
+
+      &last-child {
+        margin-right: 0;
+      }
+    }
+
+    &.social-links {
+      float: right;
+      li {
+
+        a, a:visited {
+          color: @white;
+
+          &:hover {
+            color: @hlink-color;
+            
+            .fa-twitter-square:hover  { color: #55acee; }
+            .fa-github:hover          { color: #6cc644; }
+          }
+        }
+      }
+    }
+  }
+}
