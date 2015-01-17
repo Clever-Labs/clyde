@@ -1,4 +1,10 @@
-# EditorConfig is awesome: http://EditorConfig.org
+## Clyde Style Guide
+#
+# Instead of a formal style guide, we use
+# this EditorConfig file instead. If your
+# editor supports it, it'll keep your code
+# styles mostly in line with ours.
+# Check out EditorConfig for more: http://EditorConfig.org
 
 # top-most EditorConfig file
 root = true
@@ -9,7 +15,7 @@ end_of_line = lf
 insert_final_newline = true
 
 # Matches multiple files with brace expansion notation
-# Set default charset
+# Set default charset for all files
 [*]
 charset = utf-8
 
@@ -23,7 +29,7 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
-# 2 space indentation
+# 2 space indentation for the rest
 [*.{html,md,less,css}]
 indent_style = space
 indent_size = 2

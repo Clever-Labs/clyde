@@ -2,7 +2,7 @@
   "name": "Clyde",
   "version": "0.0.1",
   "authors": [
-    "Bill Patrianakos <bill@billpatrianakos.me>"
+    "Bill Patrianakos <bill@cleverwebdesign.net>"
   ],
   "description": "A Ghost theme by Clever",
   "main": "src/index.hbs",
